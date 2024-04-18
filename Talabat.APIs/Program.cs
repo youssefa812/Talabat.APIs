@@ -35,6 +35,8 @@ namespace Talabat.APIs
 
 			webApplicationBuilder.Services.AddAutoMapper(typeof(MappingProfiles));
 
+			webApplicationBuilder.Services.AddScoped<ExceptionMiddleware>();
+
 			webApplicationBuilder.Services.Configure<ApiBehaviorOptions>(options =>
 			{
 				options.InvalidModelStateResponseFactory = (actionContext) =>
